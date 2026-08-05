@@ -1,14 +1,17 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin)
 //    id("com.vanniktech.maven.publish") version "0.34.0"
 }
 
 android {
     namespace = "com.kyant.taglib"
-    compileSdk = 35
-    buildToolsVersion = "35.0.0"
+    compileSdk = 36
     ndkVersion = "25.2.9519653"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     defaultConfig {
         minSdk = 21
@@ -37,7 +40,9 @@ android {
     }
 }
 kotlin {
-    jvmToolchain(17)
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
     explicitApi()
 }
 
