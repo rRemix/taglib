@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.kyant.taglib"
     compileSdk = 36
-    ndkVersion = "25.2.9519653"
+    ndkVersion = "28.2.13676358"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
